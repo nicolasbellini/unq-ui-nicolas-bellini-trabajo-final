@@ -46,9 +46,11 @@ function Game (params){
     return(
         <>
         <div className="game-body">
-            <p>Elegiste: {playerPick.name}</p>
-            <p>La computadora eligio: {computerPick.name}</p>
-            {tie? <p>Empate</p> : computerWins? <p>Perdiste</p> : <p>Ganaste</p>}
+            <h1>Elegiste: </h1>
+            <img src={playerPick.image.default}/>
+            <h1>La computadora eligio: </h1>
+            <img src={computerPick.image.default}/>
+            {tie? <p>Empate</p> : computerWins? <p>Perdiste (╯‵□′)╯︵┻━┻</p> : <p>Ganaste!</p>}
             <Link to="/" onClick={playAgain}>Jugar de nuevo?</Link>
         </div>
         </>

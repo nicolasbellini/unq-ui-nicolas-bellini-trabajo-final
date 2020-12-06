@@ -2,24 +2,19 @@ import React,{useEffect, useState} from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 import Game from './components/Game';
 import Picks from './components/Picks';
-import lizard from './images/lizard.png';
-import paper from "./images/paper.png";
-import rock from "./images/rock.png";
-import scissors from "./images/scissors.png";
-import spock from "./images/spock.png"
 
 
 function App(){
 
   const [playerPick, setPlayerPick] = useState("");
   const [computerPick, setComputerPick] = useState("");
-  const [score, setScore] = useState(0);
+  const [score, setScore] = useState(0);  
   const choices = [
-   {name:"rock", winsTo:["lizard", "scissors"], image:{rock}},
-   {name:"paper", winsTo:["rock", "spock"], image:{paper}}, 
-   {name:"scissors", winsTo:["paper", "lizard"], image:{scissors}},
-   {name:"lizard", winsTo:["spock", "paper"], image:{lizard}}, 
-   {name:"spock", winsTo:["scissors", "rock"], image:{spock}}
+   {name:"rock", winsTo:["lizard", "scissors"], image:require('./images/rock.png')},
+   {name:"paper", winsTo:["rock", "spock"], image:require('./images/paper.png')}, 
+   {name:"scissors", winsTo:["paper", "lizard"], image:require('./images/scissors.png')},
+   {name:"lizard", winsTo:["spock", "paper"], image:require('./images/lizard.png')}, 
+   {name:"spock", winsTo:["scissors", "rock"], image:require('./images/spock.png')}
   ];
 
 
@@ -40,6 +35,7 @@ function App(){
             <Game playerPick={playerPick} computerPick= {computerPick} score= {score} newComputerPick= {generateNewPick} newScore = {setScore}></Game>
           </Route>
           <Route path="/">
+            <img src= {choices[0].image.rock}></img>
             <Picks score={score} pick={setPlayerPick} choices= {choices}></Picks>
           </Route>
         </Switch>
