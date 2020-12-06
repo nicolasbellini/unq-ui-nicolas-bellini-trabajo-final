@@ -5,18 +5,24 @@ import paper from "../images/paper.png";
 import rock from "../images/rock.png";
 import scissors from "../images/scissors.png";
 import spock from "../images/spock.png"
+import rules from "../images/rules.png";
 import '../css/Picks.css';
 
 function Picks(params) {
 
+    function pickAChoice(playerPick){
+        return params.choices.find(choice => choice.name == playerPick)
+    }
+
     function playGame(e) {
-        params.pick(e.target.dataset.id);
+        params.pick(pickAChoice(e.target.dataset.id));
     }
 
     return (
         <>
         
         <div className="pick">
+        <h1>Puntuacion actual: {params.score}</h1>
         <h1>Elegi una opcion:</h1>
             <img className="triangle"/>
             <Link to="/game">
@@ -34,6 +40,10 @@ function Picks(params) {
             <Link to="/game">
                 <img data-id="spock" className="class_spock" src={spock} onClick={playGame}/>
             </Link>
+            <div>
+                <h2>Reglas de juego:</h2>
+                <img className="rules" src={rules}/>
+            </div>
         </div>
         </>
     )
