@@ -11,9 +11,9 @@ function App(){
   const [score, setScore] = useState(0);  
   const choices = [
    {name:"rock", winsTo:["lizard", "scissors"], image:require('./images/rock.png')},
-   {name:"paper", winsTo:["rock", "spock"], image:require('./images/paper.png')}, 
+   {name:"paper", winsTo:["rock", "spock"], image:require('./images/paper.png')},
    {name:"scissors", winsTo:["paper", "lizard"], image:require('./images/scissors.png')},
-   {name:"lizard", winsTo:["spock", "paper"], image:require('./images/lizard.png')}, 
+   {name:"lizard", winsTo:["spock", "paper"], image:require('./images/lizard.png')},
    {name:"spock", winsTo:["scissors", "rock"], image:require('./images/spock.png')}
   ];
 
@@ -35,7 +35,6 @@ function App(){
             <Game playerPick={playerPick} computerPick= {computerPick} score= {score} newComputerPick= {generateNewPick} newScore = {setScore}></Game>
           </Route>
           <Route path="/">
-            <img src= {choices[0].image.rock}></img>
             <Picks score={score} pick={setPlayerPick} choices= {choices}></Picks>
           </Route>
         </Switch>

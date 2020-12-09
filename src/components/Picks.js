@@ -11,7 +11,7 @@ function Pick({choice, setPick}){
 
     return(
         <Link to="/game">
-        <img src={choice.image.default} onClick={playGame} />
+        <img src={choice.image.default} onClick={playGame} onMouseOver={choice.name} />
         </Link>
     )
 }

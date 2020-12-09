@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../css/Game.css';
+import rules from "../images/rules.png";
 
 function Game (params){
 
@@ -52,6 +53,8 @@ function Game (params){
             <img src={computerPick.image.default}/>
             {tie? <p>Empate</p> : computerWins? <p>Perdiste (╯‵□′)╯︵┻━┻</p> : <p>Ganaste!</p>}
             <Link to="/" onClick={playAgain}>Jugar de nuevo?</Link>
+            <h2>Reglas de juego:</h2>
+            <img className="rules" src={rules}/>
         </div>
         </>
     )
