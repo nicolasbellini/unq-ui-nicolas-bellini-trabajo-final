@@ -18,7 +18,6 @@ function Game (params){
 
     function chooseWinner() {
         if(playerPick.name === computerPick.name){
-            console.log(playerPick.name === computerPick.name)
             setTie(true)
         }
         else{
@@ -49,8 +48,10 @@ function Game (params){
         <div className="game-body">
             <h1>Elegiste: </h1>
             <img src={playerPick.image.default}/>
+            <h4>{playerPick.name}</h4>
             <h1>La computadora eligio: </h1>
             <img src={computerPick.image.default}/>
+            <h4>{computerPick.name}</h4>
             {tie? <p>Empate</p> : computerWins? <p>Perdiste (╯‵□′)╯︵┻━┻</p> : <p>Ganaste!</p>}
             <Link to="/" onClick={playAgain}>Jugar de nuevo?</Link>
             <h2>Reglas de juego:</h2>

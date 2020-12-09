@@ -10,9 +10,11 @@ function Pick({choice, setPick}){
     }
 
     return(
+        <>
         <Link to="/game">
         <img src={choice.image.default} onClick={playGame} onMouseOver={choice.name} />
         </Link>
+        </>
     )
 }
 
@@ -32,6 +34,9 @@ function Picks(params) {
         <h1>Puntuacion actual: {params.score}</h1>
         <h1>Elegi una opcion:</h1>
             {params.choices.map(choice => <Pick choice= {choice} setPick= {params.pick}/>)}
+            <h4>
+            {params.choices.map(choice => <pr>{choice.name + " " }</pr>)}
+            </h4>
             <div>
                 <h2>Reglas de juego:</h2>
                 <img className="rules" src={rules}/>

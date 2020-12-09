@@ -10,11 +10,11 @@ function App(){
   const [computerPick, setComputerPick] = useState("");
   const [score, setScore] = useState(0);  
   const choices = [
-   {name:"rock", winsTo:["lizard", "scissors"], image:require('./images/rock.png')},
-   {name:"paper", winsTo:["rock", "spock"], image:require('./images/paper.png')},
-   {name:"scissors", winsTo:["paper", "lizard"], image:require('./images/scissors.png')},
-   {name:"lizard", winsTo:["spock", "paper"], image:require('./images/lizard.png')},
-   {name:"spock", winsTo:["scissors", "rock"], image:require('./images/spock.png')}
+   {name:"Piedra", winsTo:["Lagarto", "Tijera"], image:require('./images/rock.png')},
+   {name:"Papel", winsTo:["Piedra", "Spock"], image:require('./images/paper.png')},
+   {name:"Tijera", winsTo:["Papel", "Lagarto"], image:require('./images/scissors.png')},
+   {name:"Lagarto", winsTo:["Spock", "Papel"], image:require('./images/lizard.png')},
+   {name:"Spock", winsTo:["Tijera", "Piedra"], image:require('./images/spock.png')}
   ];
 
 
